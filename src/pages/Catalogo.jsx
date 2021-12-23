@@ -37,16 +37,16 @@ function Catalogo() {
       <Row>
         {productos.length > 0 ? (
           productos.map((producto, index) => (
-            <Col className="md-4" key={index}>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={producto.photography} />
+            <Col md={4} key={index}>
+              <Card style={{ width: "25rem" }}>
+                <Card.Img variant="top" src={producto.photography} width={100} height={80}/>
                 <Card.Body>
                   <Card.Title>{producto.nombre}</Card.Title>
                   <Card.Subtitle>{producto.category}</Card.Subtitle>
                   <Card.Text>
                     <p>{producto.description}</p>
-                    <p><b>Precio:</b>{producto.price}</p>
-                    <p><b>Marca:</b>{producto.brand}</p> 
+                    <p><b>Precio:</b> {producto.price}</p>
+                    <p><b>Marca:</b> {producto.brand}</p> 
                   </Card.Text>
                 </Card.Body>
               </Card>
