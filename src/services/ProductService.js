@@ -9,7 +9,7 @@ const create = (data)=> {
 }
 
 const findByPrice = (price) => {
-  return http.get(`/product/precio/${price}`);
+  return http.get(`/product/price/${price}`);
 }
 
 const getByWord=(word)=>{

@@ -23,6 +23,7 @@ function Catalogo() {
                 <option value="" disabled>
                   Seleccione filtro
                 </option>
+                <option value="">Ninguno</option>
                 <option value="description">Descripción</option>
                 <option value="price">Precio</option>
               </Form.Select>
@@ -30,13 +31,13 @@ function Catalogo() {
           </Form>
         </Col>
         <Col>
-          <Filtro filtro={filtro}></Filtro>
+          <Filtro filtro={filtro} setProductos={setProductos} productos={productos}></Filtro>
         </Col>
       </Row>
       <Row>
         {productos.length > 0 ? (
           productos.map((producto, index) => (
-            <Col key={index}>
+            <Col className="md-4" key={index}>
               <Card style={{ width: "18rem" }}>
                 <Card.Img variant="top" src={producto.photography} />
                 <Card.Body>
@@ -44,7 +45,8 @@ function Catalogo() {
                   <Card.Subtitle>{producto.category}</Card.Subtitle>
                   <Card.Text>
                     <p>{producto.description}</p>
-                    <p><b>Precio:</b>{producto.price}</p> 
+                    <p><b>Precio:</b>{producto.price}</p>
+                    <p><b>Marca:</b>{producto.brand}</p> 
                   </Card.Text>
                 </Card.Body>
               </Card>
